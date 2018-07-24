@@ -1,0 +1,50 @@
+.error {
+    color: red;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+
+    &__label {
+        display: inline-block;
+        max-width: 200px;
+    }
+}
+
+select[multiple]:focus{
+    height:auto
+}
+
+.btn {
+    background-color: white;
+    color: $wp-black;
+    cursor: pointer;
+    padding: 5px 20px;
+    outline: 0;
+
+    &--danger {
+        background-color: red;
+        border-color: transparent;
+        color: white;
+    }
+
+    &--dark {
+        background-color: $wp-black;
+        border-color: transparent;
+        color: white;
+        
+        &:hover {
+            color: $wp-bg-color;
+        }
+    }
+
+    &:hover {
+        color: $wp-bg-color;
+        opacity: .8;
+    }
+}

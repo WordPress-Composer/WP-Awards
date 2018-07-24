@@ -1,0 +1,27 @@
+{
+    "name": "wcom/wpawards",
+    "description": "An awards and voting API only plugin",
+    "type": "wordpress-plugin",
+    "authors": [
+        {
+            "name": "Gemma Black",
+            "email": "gblackuk@gmail.com"
+        }
+    ],
+    "require": {
+        "nesbot/carbon": "^1.18",
+        "firebase/php-jwt": "^4",
+        "ricardofiorani/php-video-url-parser": "^0.3.1",
+        "doctrine/dbal": "2.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.0",
+        "behat/behat": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Voting\\": "src/",
+            "VotingMocks\\": "tests/php/__mocks__/"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+// @todo - consolidate components
+.voting-list-table {
+    $this: &;
+    width: 100%;
+
+    button {
+        margin: 0;
+    }
+
+    tr {
+        background-color: white;
+    }
+
+    thead tr {
+        background-color: $wp-black;
+        color: white;
+    }
+
+    td {
+        border-bottom: 1px solid gainsboro;
+        padding: 10px;
+    }
+
+    #{$this}__main-item {
+        min-width: 150px;
+    }
+}

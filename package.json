@@ -1,0 +1,56 @@
+{
+  "name": "wpawards",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:WordPress-Composer/WP-Awards.git",
+  "author": "Gemma Black <gblackuk@gmail.com>",
+  "license": "GPLV2.1",
+  "dependencies": {
+    "axios": "^0.17.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "husky": "^0.14.3",
+    "jsonfile": "^4.0.0",
+    "maybes": "^0.2.3",
+    "postcss-cssnext": "^3.0.2",
+    "uglifyjs-webpack-plugin": "^1.1.1",
+    "vue": "^2.5.2",
+    "vue-jest": "^1.2.0",
+    "vue-loader": "^13.5.0",
+    "vue-router": "^3.0.1",
+    "webpack": "^3.8.1",
+    "webpack-simple-progress-plugin": "^0.0.3"
+  },
+  "devDependencies": {
+    "babel-jest": "^21.2.0",
+    "jest": "^21.2.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "vue-test-utils": "^1.0.0-beta.6"
+  },
+  "scripts": {
+    "precommit": "npm run prepare-release",
+    "prepare-release": "npm run production && npm run cache-busting && git add dist && git status && npm run test && npm run php:update && npm run php:test",
+    "cache-busting": "node cache-busting.js",
+    "production": "./node_modules/.bin/webpack --config webpack.config.production.js",
+    "dev": "./node_modules/.bin/webpack --config webpack.config.dev.js",
+    "test": "./node_modules/.bin/jest --coverage tests/js",
+    "test:watch": "./node_modules/.bin/jest --coverage --watch tests/js",
+    "php:test": "vendor/bin/phpunit --colors=always tests/php --bootstrap vendor/autoload.php --process-isolation",
+    "php:update": "composer update && git add composer.lock"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "./node_modules/babel-jest",
+      ".*\\.(vue)$": "./node_modules/vue-jest"
+    },
+    "verbose": true
+  }
+}

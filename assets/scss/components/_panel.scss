@@ -1,0 +1,49 @@
+.panel {
+    $this: &;
+    margin: 0;
+
+    &__item {
+        background-color: white;
+        border-bottom: 1px solid silver;
+        padding: 1rem 3rem 1rem 2rem;
+        position: relative;
+    }
+
+    &__item-button {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__item-remover {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 0;
+
+        &:after {
+            color: slategray;
+            content: 'X';
+            display: block;
+            font-weight: bold;
+            padding: 1rem;
+        }
+
+        &:hover:after {
+            color: red;
+        }
+    }
+
+    #{$this}--hoverable {
+        #{$this}__item {
+            &:hover {
+                background-color: silver;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+// @todo consolidate components
+.voting-form-box {
+    background-color: white;
+    padding: 1rem 2rem;
+
+    label {
+        display: inline-block;
+        width: 100%;
+    }
+
+    textarea,
+    input[type="text"] {
+        margin-bottom: 1rem;
+        max-width: 100%;
+        width: 100%;
+    }
+}

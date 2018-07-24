@@ -1,0 +1,22 @@
+.admin-board {
+    @media only screen and (min-width: $small) {
+        &__main {
+            box-sizing: border-box;
+            float: left;
+            padding-right: .5rem;
+            width: (100% / 3 * 2);
+        }
+
+        &__side {
+            box-sizing: border-box;
+            float: right;
+            padding-left: .5rem;
+            width: (100% / 3);
+        }
+
+        &__content-area {
+            background-color: white;
+            padding: 1rem;
+        }
+    }
+}

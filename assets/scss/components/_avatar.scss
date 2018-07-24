@@ -1,0 +1,69 @@
+.avatar {
+    background-color: white;
+    border: 1px solid silver;
+    box-sizing: border-box;
+    padding: 2rem;
+    position: relative;
+
+    &__text-field {
+        min-width: 250px;
+    }
+
+    &__fieldset {
+        margin-bottom: 1rem;
+    }
+
+    &__label {
+        display: inline-block;
+        min-width: 120px;
+    }
+
+    &__image-picker {
+        display: inline-block;
+    }
+
+    textarea {
+        height: 5rem;
+        overflow: auto;
+    }
+
+    &__remove {
+        cursor: pointer;
+        height: 20px;
+        position: absolute;
+        right: 6px;
+        top: 6px;
+        width: 20px;
+
+        &:before,
+        &:after {
+            background-color: black;
+            bottom: 0;
+            content: '';
+            height: 3px;
+            position: absolute;
+            top: 7px;
+            width: 100%;
+        }
+
+        &:before {
+            left: 0;
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            right: 0;
+            transform: rotate(-45deg);
+        }
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+
+    &--simple {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+}
